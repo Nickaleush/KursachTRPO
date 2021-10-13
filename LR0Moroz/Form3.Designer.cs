@@ -1,7 +1,7 @@
 ﻿
 namespace LR0Moroz
 {
-    partial class Form3
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,16 +36,16 @@ namespace LR0Moroz
             // 
             // EditOrder
             // 
-            this.EditOrder.Location = new System.Drawing.Point(252, 176);
+            this.EditOrder.Location = new System.Drawing.Point(138, 127);
             this.EditOrder.Name = "EditOrder";
-            this.EditOrder.Size = new System.Drawing.Size(225, 22);
+            this.EditOrder.Size = new System.Drawing.Size(225, 25);
             this.EditOrder.TabIndex = 0;
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(304, 215);
+            this.EditButton.Location = new System.Drawing.Point(180, 174);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(125, 25);
+            this.EditButton.Size = new System.Drawing.Size(125, 26);
             this.EditButton.TabIndex = 1;
             this.EditButton.Text = "Редактировать";
             this.EditButton.UseVisualStyleBackColor = true;
@@ -53,22 +53,22 @@ namespace LR0Moroz
             // 
             // EditDate
             // 
-            this.EditDate.Location = new System.Drawing.Point(252, 137);
+            this.EditDate.Location = new System.Drawing.Point(138, 76);
             this.EditDate.Name = "EditDate";
-            this.EditDate.Size = new System.Drawing.Size(225, 22);
+            this.EditDate.Size = new System.Drawing.Size(225, 25);
             this.EditDate.TabIndex = 2;
             // 
-            // Form3
+            // EditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 375);
+            this.ClientSize = new System.Drawing.Size(491, 302);
             this.Controls.Add(this.EditDate);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.EditOrder);
-            this.Name = "Form3";
-            this.Text = "Редактировать заказ";
-   
+            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Name = "EditForm";
+            this.Text = "Статус заказов";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,7 +1,7 @@
 ﻿
 namespace LR0Moroz
 {
-    partial class Form1
+    partial class MainTable
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,13 +30,13 @@ namespace LR0Moroz
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTable));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Customersurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,41 +74,50 @@ namespace LR0Moroz
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(68, 453);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(41, 446);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 45);
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(104, 54);
             this.button1.TabIndex = 5;
             this.button1.Text = "Добавить Заказ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // CloseButton
             // 
-            this.button2.Location = new System.Drawing.Point(472, 457);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 37);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Стоп";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.CloseButton.BackColor = System.Drawing.Color.Red;
+            this.CloseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CloseButton.Location = new System.Drawing.Point(1106, 446);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(86, 53);
+            this.CloseButton.TabIndex = 6;
+            this.CloseButton.Text = "Закрыть таблицу";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customersurname,
-            this.Column2,
+            this.OrderNumber,
             this.PrName,
             this.Date1,
             this.Date2,
             this.MSurname,
             this.Cost});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 34);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1237, 390);
+            this.dataGridView1.Size = new System.Drawing.Size(930, 360);
             this.dataGridView1.TabIndex = 7;
+          
             // 
             // Customersurname
             // 
@@ -118,13 +127,13 @@ namespace LR0Moroz
             this.Customersurname.ReadOnly = true;
             this.Customersurname.Width = 125;
             // 
-            // Column2
+            // OrderNumber
             // 
-            this.Column2.HeaderText = "Номер заказа";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
+            this.OrderNumber.HeaderText = "Номер заказа";
+            this.OrderNumber.MinimumWidth = 6;
+            this.OrderNumber.Name = "OrderNumber";
+            this.OrderNumber.ReadOnly = true;
+            this.OrderNumber.Width = 125;
             // 
             // PrName
             // 
@@ -168,9 +177,11 @@ namespace LR0Moroz
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(217, 453);
+            this.ClearButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClearButton.Location = new System.Drawing.Point(785, 446);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(166, 46);
+            this.ClearButton.Size = new System.Drawing.Size(186, 54);
             this.ClearButton.TabIndex = 8;
             this.ClearButton.Text = "Очистить таблицу";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -178,9 +189,11 @@ namespace LR0Moroz
             // 
             // ClearSelected
             // 
-            this.ClearSelected.Location = new System.Drawing.Point(619, 457);
+            this.ClearSelected.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClearSelected.Location = new System.Drawing.Point(364, 446);
+            this.ClearSelected.Margin = new System.Windows.Forms.Padding(4);
             this.ClearSelected.Name = "ClearSelected";
-            this.ClearSelected.Size = new System.Drawing.Size(217, 36);
+            this.ClearSelected.Size = new System.Drawing.Size(211, 54);
             this.ClearSelected.TabIndex = 9;
             this.ClearSelected.Text = "Удалить выделенный заказ";
             this.ClearSelected.UseVisualStyleBackColor = true;
@@ -188,9 +201,11 @@ namespace LR0Moroz
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(908, 459);
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(188, 446);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 33);
+            this.button3.Size = new System.Drawing.Size(128, 54);
             this.button3.TabIndex = 10;
             this.button3.Text = "Редактировать";
             this.button3.UseVisualStyleBackColor = true;
@@ -199,18 +214,21 @@ namespace LR0Moroz
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1243, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(1027, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(279, 196);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
             // ONumber
             // 
-            this.ONumber.Location = new System.Drawing.Point(1117, 459);
+            this.ONumber.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ONumber.Location = new System.Drawing.Point(619, 446);
+            this.ONumber.Margin = new System.Windows.Forms.Padding(4);
             this.ONumber.Name = "ONumber";
-            this.ONumber.Size = new System.Drawing.Size(120, 30);
+            this.ONumber.Size = new System.Drawing.Size(135, 54);
             this.ONumber.TabIndex = 12;
             this.ONumber.Text = "Статус заказов";
             this.ONumber.UseVisualStyleBackColor = true;
@@ -223,7 +241,8 @@ namespace LR0Moroz
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1736, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1436, 29);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -232,8 +251,9 @@ namespace LR0Moroz
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьToolStripMenuItem,
             this.сохранитьToolStripMenuItem});
+            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 23);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // открытьToolStripMenuItem
@@ -257,11 +277,13 @@ namespace LR0Moroz
             // Markov
             // 
             this.Markov.AutoSize = true;
-            this.Markov.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Markov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Markov.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Markov.LinkColor = System.Drawing.Color.Navy;
-            this.Markov.Location = new System.Drawing.Point(1318, 282);
+            this.Markov.Location = new System.Drawing.Point(1119, 332);
+            this.Markov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Markov.Name = "Markov";
-            this.Markov.Size = new System.Drawing.Size(82, 16);
+            this.Markov.Size = new System.Drawing.Size(90, 19);
             this.Markov.TabIndex = 14;
             this.Markov.TabStop = true;
             this.Markov.Text = "Марков В.Н.";
@@ -269,12 +291,15 @@ namespace LR0Moroz
             // 
             // Kislyakov
             // 
+            this.Kislyakov.ActiveLinkColor = System.Drawing.Color.Red;
             this.Kislyakov.AutoSize = true;
-            this.Kislyakov.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Kislyakov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Kislyakov.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Kislyakov.LinkColor = System.Drawing.Color.Navy;
-            this.Kislyakov.Location = new System.Drawing.Point(1318, 254);
+            this.Kislyakov.Location = new System.Drawing.Point(1119, 289);
+            this.Kislyakov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Kislyakov.Name = "Kislyakov";
-            this.Kislyakov.Size = new System.Drawing.Size(102, 17);
+            this.Kislyakov.Size = new System.Drawing.Size(100, 19);
             this.Kislyakov.TabIndex = 15;
             this.Kislyakov.TabStop = true;
             this.Kislyakov.Text = "Кисляков С.В.";
@@ -283,11 +308,13 @@ namespace LR0Moroz
             // Trofimov
             // 
             this.Trofimov.AutoSize = true;
-            this.Trofimov.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Trofimov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Trofimov.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Trofimov.LinkColor = System.Drawing.Color.Navy;
-            this.Trofimov.Location = new System.Drawing.Point(1318, 311);
+            this.Trofimov.Location = new System.Drawing.Point(1119, 375);
+            this.Trofimov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Trofimov.Name = "Trofimov";
-            this.Trofimov.Size = new System.Drawing.Size(101, 16);
+            this.Trofimov.Size = new System.Drawing.Size(107, 19);
             this.Trofimov.TabIndex = 16;
             this.Trofimov.TabStop = true;
             this.Trofimov.Text = "Трофимов В.М.";
@@ -297,7 +324,8 @@ namespace LR0Moroz
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(1302, 219);
+            this.label1.Location = new System.Drawing.Point(1102, 256);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 22);
             this.label1.TabIndex = 17;
@@ -305,36 +333,39 @@ namespace LR0Moroz
             // 
             // MarkovTextBox
             // 
-            this.MarkovTextBox.Location = new System.Drawing.Point(1306, 526);
+            this.MarkovTextBox.Location = new System.Drawing.Point(1580, 678);
+            this.MarkovTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MarkovTextBox.Name = "MarkovTextBox";
-            this.MarkovTextBox.Size = new System.Drawing.Size(142, 22);
+            this.MarkovTextBox.Size = new System.Drawing.Size(160, 27);
             this.MarkovTextBox.TabIndex = 18;
             this.MarkovTextBox.Visible = false;
             // 
             // KislyakovTextBox
             // 
-            this.KislyakovTextBox.Location = new System.Drawing.Point(1306, 526);
+            this.KislyakovTextBox.Location = new System.Drawing.Point(1580, 678);
+            this.KislyakovTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.KislyakovTextBox.Name = "KislyakovTextBox";
-            this.KislyakovTextBox.Size = new System.Drawing.Size(142, 22);
+            this.KislyakovTextBox.Size = new System.Drawing.Size(160, 27);
             this.KislyakovTextBox.TabIndex = 19;
             this.KislyakovTextBox.Visible = false;
             // 
             // TrophimovTextBox
             // 
-            this.TrophimovTextBox.Location = new System.Drawing.Point(1321, 526);
+            this.TrophimovTextBox.Location = new System.Drawing.Point(1580, 678);
+            this.TrophimovTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TrophimovTextBox.Name = "TrophimovTextBox";
-            this.TrophimovTextBox.Size = new System.Drawing.Size(142, 22);
+            this.TrophimovTextBox.Size = new System.Drawing.Size(160, 27);
             this.TrophimovTextBox.TabIndex = 20;
             this.TrophimovTextBox.Visible = false;
             // 
-            // Form1
+            // MainTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1736, 707);
+            this.ClientSize = new System.Drawing.Size(1436, 611);
             this.Controls.Add(this.TrophimovTextBox);
             this.Controls.Add(this.KislyakovTextBox);
             this.Controls.Add(this.MarkovTextBox);
@@ -349,13 +380,14 @@ namespace LR0Moroz
             this.Controls.Add(this.ClearSelected);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "MainTable";
             this.Text = "Ателье-мастерская \"ШейДаПари\"";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -368,7 +400,7 @@ namespace LR0Moroz
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CloseButton;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button ClearSelected;
@@ -388,14 +420,14 @@ namespace LR0Moroz
         public System.Windows.Forms.TextBox MarkovTextBox;
         private System.Windows.Forms.TextBox KislyakovTextBox;
         private System.Windows.Forms.TextBox TrophimovTextBox;
+        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Customersurname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

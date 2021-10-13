@@ -3,13 +3,10 @@ using System.Windows.Forms;
 
 namespace LR0Moroz
 {
-    public partial class Form2 : Form
+    public partial class AddOrderForm : Form
     {
-        public Form1 otherForm;
-        int Trofimov = -1;
-        int Markov = -1;
-        int Kislyakov = -1;
-        public Form2(Form1 form1)
+        public MainTable otherForm;
+        public AddOrderForm(MainTable form1)
         {
             InitializeComponent();
             otherForm = form1;
@@ -17,7 +14,7 @@ namespace LR0Moroz
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 f1 = new Form1();
+            MainTable f1 = new MainTable();
             f1.ShowDialog();
 
         }
@@ -30,9 +27,8 @@ namespace LR0Moroz
             else
             {
                 otherForm.dataGridView1.Rows.Add(Custsurname.Text, ONumber.Text, ProductName.Text, Date1.Text, Date2.Text, MSurname.Text, Cost.Text);
-                otherForm.MarkovTextBox.Clear();
-                
-                this.Hide();
+                otherForm.MarkovTextBox.Clear();               
+                Hide();
             }          
         }
         private void Custsurname_KeyPress(object sender, KeyPressEventArgs e)

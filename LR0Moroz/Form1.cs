@@ -2,18 +2,24 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
+using System.Drawing;
 
 namespace LR0Moroz
 {
-    public partial class Form1 : Form
+    public partial class MainTable : Form
     {
-        public Form1()
+        public MainTable()
         {
             InitializeComponent();
         }
+        public MainTable(string[] s)
+        {
+            InitializeComponent();
+            dataGridView1.Rows.Add(s);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 child = new Form2(this);
+            AddOrderForm child = new AddOrderForm(this);
             child.Show();
             child.ONumber.Text = ONumber_generation().ToString();
         }
@@ -42,9 +48,10 @@ namespace LR0Moroz
         }
         private void button3_Click(object sender, EventArgs e)
         {
+
             if (dataGridView1.SelectedCells[0].Value != null)
             {
-                Form3 child = new Form3(this);
+                EditForm child = new EditForm(this);
                 child.EditOrder.Text = dataGridView1.SelectedCells[0].Value.ToString();
                 child.Show();
             }
@@ -53,12 +60,23 @@ namespace LR0Moroz
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form4 child = new Form4(this);
-            child.Show();
+            dataGridView1.AllowUserToAddRows = false;
+            DateTime today = DateTime.Today.Date;
+            foreach (DataGridViewRow row in dataGridView1.Rows) 
+            {
+                DateTime dt = DateTime.Parse(row.Cells["Date2"].Value.ToString());
+                if (dt > today)
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.Green;
+                }
+            }
         }
-
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {          
             Stream mystr = null;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -132,27 +150,38 @@ namespace LR0Moroz
         {
             int Trophimov1 = 0;
             int TrophimovCost = 0;
+            int maxTr = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["MSurname"]?.Value?.ToString() == "Трофимов")
                 {
                     Trophimov1++;
                     if (Int32.TryParse(row.Cells["Cost"]?.Value?.ToString(), out int Cost))
-                    {                       
+                    {
+                        if (Convert.ToInt32(row.Cells["Cost"]?.Value) > maxTr) 
+                            maxTr = Convert.ToInt32(row.Cells["Cost"]?.Value);
                         var avg = Cost;
                         TrophimovCost += avg;
                     }
                 }
             }
-            TrophimovTextBox.Text = "Количество заказов: " + Trophimov1 + "Средняя Стоимость заказов: " + TrophimovCost/ Trophimov1;
-            MessageBox.Show(TrophimovTextBox.Text, "Трофимов В.М.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Trophimov1 !=0 && TrophimovCost !=0)
+            {
+                TrophimovTextBox.Text = "Количество заказов: " + Trophimov1 + "\n" + "Средняя Стоимость заказов: " + TrophimovCost / Trophimov1 + "\n" + "Самый дорогой заказ: " + maxTr;
+                MessageBox.Show(TrophimovTextBox.Text, "Трофимов В.М.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("У этого мастера нет заказов!");
 
         }
         private void Kislyakov_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Kislyakov11();
+        }
+        public string Kislyakov11() 
+        {
             int Kislyakov1 = 0;
             int KislyakovCost = 0;
+            int maxKis = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["MSurname"]?.Value?.ToString() == "Кисляков")
@@ -160,21 +189,28 @@ namespace LR0Moroz
                     Kislyakov1++;
                     if (Int32.TryParse(row.Cells["Cost"]?.Value?.ToString(), out int Cost))
                     {
+                        if (Convert.ToInt32(row.Cells["Cost"]?.Value) > maxKis)
+                            maxKis = Convert.ToInt32(row.Cells["Cost"]?.Value);
                         var avg = Cost;
                         KislyakovCost += avg;
                     }
                 }
             }
-            if (Kislyakov1 !=null && KislyakovCost != 0)
+            if (Kislyakov1 != 0 && KislyakovCost != 0)
             {
-                KislyakovTextBox.Text = "Количество заказов: " + Kislyakov1 + "\n" + "Средняя стоимость заказов мастера: " + KislyakovCost / Kislyakov1;
+                KislyakovTextBox.Text = "Количество заказов: " + Kislyakov1 + "\n" + "Средняя стоимость заказов мастера: " + KislyakovCost / Kislyakov1 + "\n" + "Самый дорогой заказ: " + maxKis;
                 MessageBox.Show(KislyakovTextBox.Text, "Кисляков С.В.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            else MessageBox.Show("У этого мастера нет заказов!");
+            return KislyakovTextBox.Text;
+
         }
         private void Markov_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             int Markov1 = 0;
             int MarkovCost = 0;
+            int maxMark = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["MSurname"]?.Value?.ToString() == "Марков")
@@ -182,18 +218,22 @@ namespace LR0Moroz
                     Markov1++;
                     if (Int32.TryParse(row.Cells["Cost"]?.Value?.ToString(), out int Cost))
                     {
+                        if (Convert.ToInt32(row.Cells["Cost"]?.Value) > maxMark)
+                            maxMark = Convert.ToInt32(row.Cells["Cost"]?.Value);
                         var avg = Cost;
                         MarkovCost += avg;
                     }
                 }
             }
-            MarkovTextBox.Text = "Количество заказов: " + Markov1 + "\n" + "Средняя стоимость заказов мастера: " + MarkovCost/Markov1;
-            MessageBox.Show(MarkovTextBox.Text, "Марков В.Н.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Markov1 !=0 && MarkovCost !=0) 
+            {
+                MarkovTextBox.Text = "Количество заказов: " + Markov1 + "\n" + "Средняя стоимость заказов мастера: " + MarkovCost / Markov1 + "\n" + "Самый дорогой заказ: " + maxMark;
+                MessageBox.Show(MarkovTextBox.Text, "Марков В.Н.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else MessageBox.Show("У этого мастера нет заказов!");
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
+      
     }
    
 }

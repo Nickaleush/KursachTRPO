@@ -1,7 +1,7 @@
 ﻿
 namespace LR0Moroz
 {
-    partial class Form2
+    partial class AddOrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace LR0Moroz
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrderForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -135,7 +135,7 @@ namespace LR0Moroz
             // Custsurname
             // 
             this.Custsurname.Location = new System.Drawing.Point(268, 139);
-            this.Custsurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Custsurname.Margin = new System.Windows.Forms.Padding(4);
             this.Custsurname.Name = "Custsurname";
             this.Custsurname.Size = new System.Drawing.Size(168, 25);
             this.Custsurname.TabIndex = 8;
@@ -144,7 +144,7 @@ namespace LR0Moroz
             // Cost
             // 
             this.Cost.Location = new System.Drawing.Point(268, 356);
-            this.Cost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cost.Margin = new System.Windows.Forms.Padding(4);
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(168, 25);
             this.Cost.TabIndex = 14;
@@ -153,7 +153,7 @@ namespace LR0Moroz
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(236, 417);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 15;
@@ -164,7 +164,7 @@ namespace LR0Moroz
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(373, 417);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 30);
             this.button2.TabIndex = 16;
@@ -175,7 +175,7 @@ namespace LR0Moroz
             // Date1
             // 
             this.Date1.Location = new System.Drawing.Point(268, 228);
-            this.Date1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Date1.Margin = new System.Windows.Forms.Padding(4);
             this.Date1.Name = "Date1";
             this.Date1.Size = new System.Drawing.Size(168, 25);
             this.Date1.TabIndex = 17;
@@ -183,7 +183,7 @@ namespace LR0Moroz
             // Date2
             // 
             this.Date2.Location = new System.Drawing.Point(268, 271);
-            this.Date2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Date2.Margin = new System.Windows.Forms.Padding(4);
             this.Date2.Name = "Date2";
             this.Date2.Size = new System.Drawing.Size(168, 25);
             this.Date2.TabIndex = 18;
@@ -191,7 +191,7 @@ namespace LR0Moroz
             // ONumber
             // 
             this.ONumber.Location = new System.Drawing.Point(556, 420);
-            this.ONumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ONumber.Margin = new System.Windows.Forms.Padding(4);
             this.ONumber.Name = "ONumber";
             this.ONumber.ReadOnly = true;
             this.ONumber.Size = new System.Drawing.Size(101, 25);
@@ -206,7 +206,7 @@ namespace LR0Moroz
             "Кисляков",
             "Трофимов"});
             this.MSurname.Location = new System.Drawing.Point(268, 313);
-            this.MSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MSurname.Margin = new System.Windows.Forms.Padding(4);
             this.MSurname.Name = "MSurname";
             this.MSurname.Size = new System.Drawing.Size(168, 25);
             this.MSurname.TabIndex = 20;
@@ -214,7 +214,7 @@ namespace LR0Moroz
             // ProductName
             // 
             this.ProductName.Location = new System.Drawing.Point(268, 183);
-            this.ProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductName.Margin = new System.Windows.Forms.Padding(4);
             this.ProductName.Name = "ProductName";
             this.ProductName.Size = new System.Drawing.Size(168, 25);
             this.ProductName.TabIndex = 10;
@@ -224,14 +224,14 @@ namespace LR0Moroz
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(444, 67);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(273, 297);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
-            // Form2
+            // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,8 +257,8 @@ namespace LR0Moroz
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form2";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "AddOrderForm";
             this.Text = "Добавление заказа";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -284,7 +284,7 @@ namespace LR0Moroz
         public System.Windows.Forms.DateTimePicker Date1;
         public System.Windows.Forms.TextBox ONumber;
         private System.Windows.Forms.ComboBox MSurname;
-        public System.Windows.Forms.TextBox ProductName;
+        public new System.Windows.Forms.TextBox ProductName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
